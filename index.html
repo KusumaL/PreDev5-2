@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Game</title>
+	</head>
+	<body position="absolute">
+		<img src="dog.jpg" class="img" style="height: 250px;width: 250px;position: absolute;top: 050px;left: 050px">
+		<div>
+			<button class="button1" style="height: 50px;width: 50px;position: absolute;top: 050px;left: 050px">01</button>
+			<button class="button1" style="height: 50px;width: 50px;position: absolute;top: 050px;left: 100px">02</button>
+			<button class="button1" style="height: 50px;width: 50px;position: absolute;top: 050px;left: 150px">03</button>
+			<button class="button1" style="height: 50px;width: 50px;position: absolute;top: 050px;left: 200px">04</button>
+			<button class="button1" style="height: 50px;width: 50px;position: absolute;top: 050px;left: 250px">05</button>
+			<button class="button1" style="height: 50px;width: 50px;position: absolute;top: 100px;left: 050px">06</button>
+			<button class="button1" style="height: 50px;width: 50px;position: absolute;top: 100px;left: 100px">07</button>
+			<button class="button1" style="height: 50px;width: 50px;position: absolute;top: 100px;left: 150px">08</button>
+			<button class="button1" style="height: 50px;width: 50px;position: absolute;top: 100px;left: 200px">09</button>
+			<button class="button1" style="height: 50px;width: 50px;position: absolute;top: 100px;left: 250px">10</button>
+			<button class="button1" style="height: 50px;width: 50px;position: absolute;top: 150px;left: 050px">11</button>
+			<button class="button1" style="height: 50px;width: 50px;position: absolute;top: 150px;left: 100px">12</button>
+			<button class="button1" style="height: 50px;width: 50px;position: absolute;top: 150px;left: 150px">13</button>
+			<button class="button1" style="height: 50px;width: 50px;position: absolute;top: 150px;left: 200px">14</button>
+			<button class="button1" style="height: 50px;width: 50px;position: absolute;top: 150px;left: 250px">15</button>
+			<button class="button1" style="height: 50px;width: 50px;position: absolute;top: 200px;left: 050px">16</button>
+			<button class="button1" style="height: 50px;width: 50px;position: absolute;top: 200px;left: 100px">17</button>
+			<button class="button1" style="height: 50px;width: 50px;position: absolute;top: 200px;left: 150px">18</button>
+			<button class="button1" style="height: 50px;width: 50px;position: absolute;top: 200px;left: 200px">19</button>
+			<button class="button1" style="height: 50px;width: 50px;position: absolute;top: 200px;left: 250px">20</button>
+			<button class="button1" style="height: 50px;width: 50px;position: absolute;top: 250px;left: 050px">21</button>
+			<button class="button1" style="height: 50px;width: 50px;position: absolute;top: 250px;left: 100px">22</button>
+			<button class="button1" style="height: 50px;width: 50px;position: absolute;top: 250px;left: 150px">23</button>
+			<button class="button1" style="height: 50px;width: 50px;position: absolute;top: 250px;left: 200px">24</button>
+			<button class="button1" style="height: 50px;width: 50px;position: absolute;top: 250px;left: 250px">25</button>
+		</div>
+		<label style="position: absolute;top: 350px;left: 125px">Score : <span id="score"> 100 </span></label>
+		<input style="width: 125px;position: absolute;top: 400px;left: 75px" id="answer" placeholder="your answer"/>
+		<button style="position: absolute;top: 400px;left: 210px" onclick="check()"> SUBMIT</button>
+	</body>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script>
+	    $(document).ready(function() {
+	    	var score = 100;
+	        $(".button1").click(function() {
+	        	if (score - 5 >= 0) {
+		            $(this).hide();
+			        score = score - 5;
+					document.getElementById('score').innerHTML = score;
+				}
+	        });
+	    });
+		function check() {
+			var ans = $("#answer").val();
+			if (ans === "dog")
+				alert("Correct");
+			else
+				alert("WRONG");
+		}
+	</script>
+</html>
